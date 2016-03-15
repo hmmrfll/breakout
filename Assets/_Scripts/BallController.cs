@@ -11,6 +11,7 @@ public class BallController : MonoBehaviour {
 
 	public AudioClip woodbSound;
 	public AudioClip woodwSound;
+	public AudioClip paddleSound;
 	AudioSource brickAudio;
 
 	void Awake () {
@@ -45,6 +46,10 @@ public class BallController : MonoBehaviour {
 		if (other.gameObject.tag == "WoodWall") {
 			brickAudio.enabled = true;
 			brickAudio.PlayOneShot (woodwSound, cVolume);
+		}
+		if (other.gameObject.tag == "Player") {
+			brickAudio.enabled = true;
+			brickAudio.PlayOneShot (paddleSound, cVolume);
 		}
 	}
 

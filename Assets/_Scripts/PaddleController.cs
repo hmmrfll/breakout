@@ -3,9 +3,10 @@ using System.Collections;
 
 public class PaddleController : MonoBehaviour {
 	public float paddleSpeed = 2f;
+	public float paddleYPos = -24f;
 	private Rigidbody rb;
 
-	private Vector3 playerPos = new Vector3 (0, -15.5f, 0);
+	private Vector3 playerPos = new Vector3 (0, -24f, 0);
 
 	void Awake () {
 		rb = GetComponent<Rigidbody> ();
@@ -14,9 +15,8 @@ public class PaddleController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float xPos = transform.position.x + (Input.GetAxis ("Horizontal") * paddleSpeed);
-		playerPos = new Vector3 (Mathf.Clamp (xPos, -25f, 25f), -15.5f, 0f);
+		playerPos = new Vector3 (Mathf.Clamp (xPos, -25f, 25f), paddleYPos, 0f);
 		rb.MovePosition (playerPos);
-		//transform.position = playerPos;
 	
 	}
 }

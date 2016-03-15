@@ -7,4 +7,9 @@ public class DeadZone : MonoBehaviour {
 	{
 		GM.instance.LoseLife();
 	}
+
+	void OnCollisionEnter()
+	{
+		GM.instance.LoseLife ();
+	}
 }
