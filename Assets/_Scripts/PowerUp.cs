@@ -8,7 +8,7 @@ public class PowerUp : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		powerUpIndex = Random.Range (1, 4);	
+		powerUpIndex = Random.Range (1, 3);	
 		powerUpText = GetComponentInChildren<TextMesh> ();
 		powerUpText.text = powerUpType [powerUpIndex];
 		Debug.Log ("PowerUp:", gameObject);

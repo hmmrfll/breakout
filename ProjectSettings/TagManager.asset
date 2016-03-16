@@ -7,6 +7,7 @@ TagManager:
   - WoodBrick
   - Ball
   - WoodWall
+  - PWR
   layers:
   - Default
   - TransparentFX

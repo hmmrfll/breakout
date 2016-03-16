@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11404186}
   m_Layer: 0
   m_Name: PowerUp
-  m_TagString: Untagged
+  m_TagString: PWR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,6 +30,7 @@ GameObject:
   - 4: {fileID: 413566}
   - 23: {fileID: 2398412}
   - 102: {fileID: 10207642}
+  - 122: {fileID: 12245976}
   m_Layer: 0
   m_Name: PWRText
   m_TagString: Untagged
@@ -43,8 +44,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151690}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: -0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 480136}
@@ -147,16 +148,16 @@ TextMesh:
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
-  m_Anchor: 0
+  m_Anchor: 4
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 10
   m_FontStyle: 0
-  m_RichText: 1
+  m_RichText: 0
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
 --- !u!114 &11404186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,6 +169,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228bed5aab39b70419c1b1a549435441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!122 &12245976
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151690}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278255611
+  m_Size: 1
 --- !u!136 &13623910
 CapsuleCollider:
   m_ObjectHideFlags: 1

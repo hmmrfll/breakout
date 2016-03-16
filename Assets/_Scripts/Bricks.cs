@@ -5,7 +5,7 @@ using System.Collections;
 public class Bricks : MonoBehaviour {
 	public GameObject brickParticle;
 	public GameObject powerUp;
-	public int powerUpChance = 10;
+	public int powerUpChance = 100;
 	public float floatStrength = 1;
 	private int powerUpNumber = UnityEngine.Random.Range (0, 101);
 	Vector3 floatY;
