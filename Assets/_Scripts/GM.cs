@@ -84,4 +84,11 @@ public class GM : MonoBehaviour {
 		bricks--;
 		CheckGameOver();
 	}
+
+	public void LoadPowerUp(int powerUpIndex){
+		Debug.Log (powerUpIndex);
+		if (powerUpIndex == 1) {
+			
+		}
+	}
 }

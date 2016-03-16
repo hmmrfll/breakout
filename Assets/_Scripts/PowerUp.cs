@@ -8,12 +8,10 @@ public class PowerUp : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+		
 		powerUpIndex = Random.Range (1, 3);	
 		powerUpText = GetComponentInChildren<TextMesh> ();
 		powerUpText.text = powerUpType [powerUpIndex];
-		Debug.Log ("PowerUp:", gameObject);
-		Debug.Log ("powerUpIndex: powerUpIndex");
-		Debug.Log ("powerUpText: powerUpType");
 
 	}
 	
@@ -22,12 +20,11 @@ public class PowerUp : MonoBehaviour {
 	
 	}
 
-	void OnCollisionEnter(Collision other){
+	void OnTriggerEnter(Collider other){
 
 		if (other.gameObject.tag == "Player") {
-			//GM.instance.LoadPowerup (powerups [roleIndex]);
+			GM.instance.LoadPowerUp (powerUpIndex);
+			Destroy (gameObject); 
 		}
-
-		
 	}
 }
