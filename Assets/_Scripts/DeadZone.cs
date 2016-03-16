@@ -3,13 +3,23 @@ using System.Collections;
 
 public class DeadZone : MonoBehaviour {
 
-	void OnTriggerEnter ()
+	void OnTriggerEnter (Collider other)
 	{
-		GM.instance.LoseLife();
+		if (other.gameObject.tag == "Ball") {
+			GM.instance.LoseLife ();
+		}
+		if (other.gameObject.tag == "PWR") {
+			Destroy (other.gameObject);
+		}
 	}
 
-	void OnCollisionEnter()
+	void OnCollisionEnter(Collision other)
 	{
-		GM.instance.LoseLife ();
+		if (other.gameObject.tag == "Ball") {
+			GM.instance.LoseLife ();
+		}
+		if (other.gameObject.tag == "PWR") {
+			Destroy (other.gameObject);
+		}
 	}
 }
