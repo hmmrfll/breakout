@@ -5,7 +5,7 @@ public class DeadZone : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other)
 	{
-		if (other.gameObject.tag == "Ball") {
+		if (other.gameObject.tag == "Ball" && !GM.groundImmune) {
 			GM.instance.LoseLife ();
 		}
 		if (other.gameObject.tag == "PWR") {
@@ -15,7 +15,7 @@ public class DeadZone : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other)
 	{
-		if (other.gameObject.tag == "Ball") {
+		if (other.gameObject.tag == "Ball" && !GM.groundImmune) {
 			GM.instance.LoseLife ();
 		}
 		if (other.gameObject.tag == "PWR") {
