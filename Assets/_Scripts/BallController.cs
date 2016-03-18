@@ -12,11 +12,11 @@ public class BallController : MonoBehaviour {
 	public AudioClip woodbSound;
 	public AudioClip woodwSound;
 	public AudioClip paddleSound;
-	AudioSource brickAudio;
+	AudioSource ballAudio;
 
 	void Awake () {
 		rb = GetComponent<Rigidbody> ();
-		brickAudio = GetComponent<AudioSource> ();
+		ballAudio = GetComponent<AudioSource> ();
 		//Debug Velocity
 		/*
 		GameObject tempTextBox = (GameObject)Instantiate (velocityText);
@@ -32,7 +32,6 @@ public class BallController : MonoBehaviour {
 			ballInPlay = true;
 			rb.isKinematic = false;
 			rb.AddForce (new Vector3 (0f, ballInitialVelocity, 0f));
-
 		}
 	}
 
@@ -40,16 +39,16 @@ public class BallController : MonoBehaviour {
 		
 		float cVolume = Mathf.Clamp(rb.velocity.magnitude/maxVelocity,0.2f,1.0f);
 		if (other.gameObject.tag == "WoodBrick") {
-			brickAudio.enabled = true;
-			brickAudio.PlayOneShot (woodbSound, cVolume);
+			ballAudio.enabled = true;
+			ballAudio.PlayOneShot (woodbSound, cVolume);
 		}
 		if (other.gameObject.tag == "WoodWall") {
-			brickAudio.enabled = true;
-			brickAudio.PlayOneShot (woodwSound, cVolume);
+			ballAudio.enabled = true;
+			ballAudio.PlayOneShot (woodwSound, cVolume);
 		}
 		if (other.gameObject.tag == "Player") {
-			brickAudio.enabled = true;
-			brickAudio.PlayOneShot (paddleSound, cVolume);
+			ballAudio.enabled = true;
+			ballAudio.PlayOneShot (paddleSound, cVolume);
 		}
 	}
 

@@ -4,6 +4,7 @@ using System.Collections;
 public class PaddleController : MonoBehaviour {
 	public float paddleSpeed = 2f;
 	public float paddleYPos = -24f;
+
 	private Rigidbody rb;
 
 	private Vector3 playerPos = new Vector3 (0, -24f, 0);

@@ -24,6 +24,7 @@ public class GM : MonoBehaviour {
 	public GameObject paddle;				/* Object that holds paddle/ball, and then paddle when ball is no longer child. */
 	public GameObject deathParticles;		/* Particle effect when player dies */
 	public AudioClip playerDeath;			/* Explosion audio clip for player death. */
+	public AudioClip poweredUp;				/* Player picked up a power up */
 	AudioSource gameAudio;					/* Audiosource for GameManager originating sounds. */
 	public static GM instance = null;
 
@@ -96,6 +97,7 @@ public class GM : MonoBehaviour {
 
 	public void LoadPowerUp(int powerUpIndex){
 		Debug.Log (powerUpIndex);
+		gameAudio.PlayOneShot (poweredUp, 0.7f);
 		if (powerUpIndex == 0) {
 			heavyBall = true;
 			Invoke ("UnloadPowerUp1", 15.0f);
