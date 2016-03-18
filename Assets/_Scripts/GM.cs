@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 
 
+
 public class GM : MonoBehaviour {
 
 	// Track power ups with global booleans inside this Singleton class.
@@ -37,7 +38,7 @@ public class GM : MonoBehaviour {
 			instance = this;
 		else if (instance != this)
 			Destroy (gameObject);
-
+		Cursor.visible = false;
 		Setup();
 
 	}
