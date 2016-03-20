@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class GM : MonoBehaviour {
 
 	// Track power ups with global booleans inside this Singleton class.
+	public bool godMode=false;
 	public static bool heavyBall=false;		/* powerUpIndex[1] from PowerUp.cs. Ball will crash through bricks without collision, only trigger */
 	public static bool groundImmune=false;	/* powerUpIndex[2] from PowerUp.cs. Ball will bounce off the ground instead of killing the paddle */
 	public static bool sloMo=false;			/* powerUpIndex[3] from PowerUp.cs. Ball/World will move in SloMo, while player paddle will move outside of gametime. */
@@ -19,6 +20,7 @@ public class GM : MonoBehaviour {
 	public int bricks = 45;					/* Bricks needed to win level. This is not nearly sophisticated enough yet. */
 	public float resetDelay = 1f;			/* Time to wait before resetting after death. */
 	public Text livesText;					/* UI Object that holds player lives on scene canvas. */
+	public Text velText;
 	public GameObject gameOver;				/* UI Object that holds GAME OVER text on scene canvas */
 	public GameObject levelComplete;		/* UI Object that holds Level Complete text on scene canvas */
 	public GameObject bricksPrefab;			/* Object that holds the 45 level bricks as a parent. */
@@ -39,6 +41,9 @@ public class GM : MonoBehaviour {
 		else if (instance != this)
 			Destroy (gameObject);
 		Cursor.visible = false;
+		if (godMode) {
+			groundImmune = true;
+		}
 		Setup();
 
 	}
@@ -117,7 +122,9 @@ public class GM : MonoBehaviour {
 		heavyBall = false;
 	}
 	public void UnloadPowerUp2(){
-		groundImmune = false;
+		if (!godMode) {
+			groundImmune = false;
+		}
 	}
 	public void UnloadPowerUp3(){
 		sloMo = false;

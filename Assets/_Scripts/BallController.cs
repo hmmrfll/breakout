@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class BallController : MonoBehaviour {
 	public float ballInitialVelocity = 1200f;
 	public float maxVelocity = 72f;
+	public float minVelocity = 36f;
 	private Rigidbody rb;
 	private Vector3 ballPos;
 	private bool ballInPlay;
@@ -60,10 +61,10 @@ public class BallController : MonoBehaviour {
 			ballPos = new Vector3 (xPos, yPos, 0f);
 			transform.position = ballPos;
 			rb.velocity = Vector3.ClampMagnitude (rb.velocity, maxVelocity);
-			if (rb.velocity.magnitude < maxVelocity/2) {
-				rb.velocity = (maxVelocity/2) * (rb.velocity.normalized) ;
+			if (rb.velocity.magnitude < minVelocity) {
+				rb.velocity = minVelocity * (rb.velocity.normalized);
 			}
-			// velMesh.text = "Normalized:" + rb.velocity.normalized; 
+			GM.instance.velText.text = "Vel:" + rb.velocity.magnitude; 
 		}
 	}
 }
