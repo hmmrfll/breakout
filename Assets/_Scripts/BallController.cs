@@ -60,6 +60,9 @@ public class BallController : MonoBehaviour {
 			ballPos = new Vector3 (xPos, yPos, 0f);
 			transform.position = ballPos;
 			rb.velocity = Vector3.ClampMagnitude (rb.velocity, maxVelocity);
+			if (rb.velocity.magnitude < maxVelocity/2) {
+				rb.velocity = (maxVelocity/2) * (rb.velocity.normalized) ;
+			}
 			// velMesh.text = "Normalized:" + rb.velocity.normalized; 
 		}
 	}

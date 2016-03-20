@@ -15,8 +15,8 @@ public class PaddleController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		float xPos = transform.position.x + ((Input.GetAxis ("Horizontal") + Input.GetAxis("Mouse X")) * paddleSpeed);
-		playerPos = new Vector3 (Mathf.Clamp (xPos, -25f, 25f), paddleYPos, 0f);
-		rb.MovePosition (playerPos);
+		float xPos = transform.position.x + ((Input.GetAxis ("Horizontal") + Input.GetAxis("Mouse X")) * paddleSpeed); // Take input from Keyboard, Joystick or Mouse
+		playerPos = new Vector3 (Mathf.Clamp (xPos, -25f, 25f), paddleYPos, 0f);  // Clamp the player between the level boundaries
+		rb.MovePosition (playerPos);  // Move the paddle
 	}
 }
