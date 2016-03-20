@@ -162,7 +162,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 1
 --- !u!64 &6436682
 MeshCollider:
@@ -384,6 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballInitialVelocity: 1200
   maxVelocity: 72
+  minVelocity: 38
   woodbSound: {fileID: 8300000, guid: bc3b643efd7d3de428ceb1ff5305aafd, type: 3}
   woodwSound: {fileID: 8300000, guid: 4e38ef0fb3d91d54d9f3bc834c21d7c1, type: 3}
   paddleSound: {fileID: 8300000, guid: d3b8b355b168e4840b0f7e9eebb52525, type: 3}
