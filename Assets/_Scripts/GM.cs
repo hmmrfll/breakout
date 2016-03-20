@@ -17,13 +17,13 @@ public class GM : MonoBehaviour {
 
 
 	public int lives = 3;					/* Player Lives */
-	public int bricks = 45;					/* Bricks needed to win level. This is not nearly sophisticated enough yet. */
+	public int bricks = 55;					/* Bricks needed to win level. This is not nearly sophisticated enough yet. */
 	public float resetDelay = 1f;			/* Time to wait before resetting after death. */
 	public Text livesText;					/* UI Object that holds player lives on scene canvas. */
 	public Text velText;
 	public GameObject gameOver;				/* UI Object that holds GAME OVER text on scene canvas */
 	public GameObject levelComplete;		/* UI Object that holds Level Complete text on scene canvas */
-	public GameObject bricksPrefab;			/* Object that holds the 45 level bricks as a parent. */
+	public GameObject bricksPrefab;			/* Object that holds the 55 level bricks as a parent. */
 	public GameObject paddle;				/* Object that holds paddle/ball, and then paddle when ball is no longer child. */
 	public GameObject deathParticles;		/* Particle effect when player dies */
 	public AudioClip playerDeath;			/* Explosion audio clip for player death. */
@@ -52,7 +52,7 @@ public class GM : MonoBehaviour {
 	{
 		gameAudio = GetComponent<AudioSource> ();
 		SetupPaddle ();						// Setup the player
-		Instantiate(bricksPrefab, transform.position, Quaternion.identity); // Setup the bricks
+		Instantiate(bricksPrefab, bricksPrefab.transform.position, Quaternion.identity); // Setup the bricks
 	}
 
 	void CheckGameOver()

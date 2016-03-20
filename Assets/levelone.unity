@@ -870,7 +870,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1029278566}
   m_LocalRotation: {x: -0.3476517, y: 0.2414733, z: -0.09315258, w: -0.9011945}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -8.52, y: 4.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1101,7 +1101,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1393361251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -8.52, y: 1.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1359,13 +1359,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   godMode: 0
   lives: 3
-  bricks: 45
+  bricks: 55
   resetDelay: 1
   livesText: {fileID: 847283285}
   velText: {fileID: 1600518402}
   gameOver: {fileID: 625909716}
   levelComplete: {fileID: 486669702}
-  bricksPrefab: {fileID: 187496, guid: 5bb0885b6bee0314a970d4d113c85bbf, type: 2}
+  bricksPrefab: {fileID: 197708, guid: 851a72d9e4e5ac948a053f36b508c72f, type: 2}
   paddle: {fileID: 159322, guid: 2713629bf385d944db2b97ec0276462c, type: 2}
   deathParticles: {fileID: 162754, guid: 2ed85f14415eaaf4ab972fc9f29a1a85, type: 2}
   playerDeath: {fileID: 8300000, guid: 6efca55aa92e5304aaff1cd2c118bdf7, type: 3}
