@@ -114,6 +114,7 @@ public class GM : MonoBehaviour {
 		}
 		if (powerUpIndex == 2) {
 			sloMo = true;
+			Time.timeScale = 0.25f;
 			Invoke ("UnloadPowerUp3", 15.0f);
 		}
 	}
@@ -128,5 +129,6 @@ public class GM : MonoBehaviour {
 	}
 	public void UnloadPowerUp3(){
 		sloMo = false;
+		Time.timeScale = 1f;
 	}
 }
