@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class BallController : MonoBehaviour {
 	public float ballInitialVelocity = 1200f;
 	public float maxVelocity = 72f;
-	public float minVelocity = 36f;
+	public float minVelocity = 38f;
 	private Rigidbody rb;
 	private Vector3 ballPos;
 	private bool ballInPlay;
@@ -56,10 +56,11 @@ public class BallController : MonoBehaviour {
 	void FixedUpdate ()
 	{
 		if (ballInPlay == true) {
-			float yPos = transform.position.y;
-			float xPos = transform.position.x;
-			ballPos = new Vector3 (xPos, yPos, 0f);
-			transform.position = ballPos;
+			//Removed this code in favor of Constrain to z-Axis.  Much better performance on Physics now.
+			//float yPos = transform.position.y;
+			//float xPos = transform.position.x;
+			//ballPos = new Vector3 (xPos, yPos, 0f);
+			//transform.position = ballPos;
 			rb.velocity = Vector3.ClampMagnitude (rb.velocity, maxVelocity);
 			if (rb.velocity.magnitude < minVelocity) {
 				rb.velocity = minVelocity * (rb.velocity.normalized);
