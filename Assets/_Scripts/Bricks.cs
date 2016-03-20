@@ -21,11 +21,15 @@ public class Bricks : MonoBehaviour {
 	}
 	void OnCollisionEnter (Collision other)
 	{
-		BreakBrick ();
+		if (other.gameObject.tag == "Ball") {
+			BreakBrick ();
+		}
 	}
 
 	void OnTriggerEnter (Collider other) {
-		BreakBrick ();
+		if (other.gameObject.tag == "Ball") {
+			BreakBrick ();
+		}
 	}
 
 	void BreakBrick(){
