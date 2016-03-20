@@ -53,6 +53,15 @@ public class BallController : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerEnter (Collider other) {
+		
+		float cVolume = Mathf.Clamp(rb.velocity.magnitude/maxVelocity,0.2f,1.0f);
+		if (other.gameObject.tag == "WoodBrick") {
+			ballAudio.enabled = true;
+			ballAudio.PlayOneShot (woodbSound, cVolume);
+		}
+	}
+
 	void FixedUpdate ()
 	{
 		if (ballInPlay == true) {
