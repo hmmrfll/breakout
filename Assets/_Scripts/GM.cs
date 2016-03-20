@@ -29,6 +29,7 @@ public class GM : MonoBehaviour {
 	public AudioClip playerDeath;			/* Explosion audio clip for player death. */
 	public AudioClip poweredUp;				/* Player picked up a power up */
 	AudioSource gameAudio;					/* Audiosource for GameManager originating sounds. */
+	public AudioSource ambientAudio;
 	public static GM instance = null;
 
 	private GameObject clonePaddle;			/* Object to hold clones of the player paddle prefab */
@@ -115,7 +116,9 @@ public class GM : MonoBehaviour {
 		if (powerUpIndex == 2) {
 			sloMo = true;
 			Time.timeScale = 0.25f;
-			Invoke ("UnloadPowerUp3", 15.0f);
+			GameObject.FindObjectOfType<AudioSource> ().pitch = 0.5f;
+			ambientAudio.pitch = 0.5f;
+			Invoke ("UnloadPowerUp3", 4.0f);
 		}
 	}
 
@@ -130,5 +133,7 @@ public class GM : MonoBehaviour {
 	public void UnloadPowerUp3(){
 		sloMo = false;
 		Time.timeScale = 1f;
+		GameObject.FindObjectOfType<AudioSource> ().pitch = 1f;
+		ambientAudio.pitch = 1f;
 	}
 }

@@ -1370,6 +1370,7 @@ MonoBehaviour:
   deathParticles: {fileID: 162754, guid: 2ed85f14415eaaf4ab972fc9f29a1a85, type: 2}
   playerDeath: {fileID: 8300000, guid: 6efca55aa92e5304aaff1cd2c118bdf7, type: 3}
   poweredUp: {fileID: 0}
+  ambientAudio: {fileID: 1928582682}
 --- !u!4 &1633874545
 Transform:
   m_ObjectHideFlags: 0
