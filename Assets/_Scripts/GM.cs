@@ -77,6 +77,9 @@ public class GM : MonoBehaviour {
 	void Reset()
 	{
 		Time.timeScale = 1f;
+		heavyBall = false;
+		sloMo = false;
+		groundImmune = false;
 		SceneManager.LoadScene ("levelone");
 	}
 
@@ -109,11 +112,13 @@ public class GM : MonoBehaviour {
 		if (powerUpIndex == 0) {
 			heavyBall = true;
 			WGTText.SetActive (true);
+			CancelInvoke ("UnloadPowerUp1");
 			Invoke ("UnloadPowerUp1", 15.0f);
 		}
 		if (powerUpIndex == 1) {
 			groundImmune = true;
 			INVText.SetActive (true);
+			CancelInvoke ("UnloadPowerUp2");
 			Invoke ("UnloadPowerUp2", 15.0f);
 		}
 		if (powerUpIndex == 2) {
@@ -122,6 +127,7 @@ public class GM : MonoBehaviour {
 			SLOText.SetActive (true);
 			GameObject.FindObjectOfType<AudioSource> ().pitch = 0.5f;
 			ambientAudio.pitch = 0.5f;
+			CancelInvoke ("UnloadPowerUp3");
 			Invoke ("UnloadPowerUp3", 4.0f);
 		}
 	}
