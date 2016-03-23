@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0657dc5590ffdc64eba728f33bb3042f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  godMode: 0
+  godMode: 1
   lives: 3
   bricks: 55
   resetDelay: 1
